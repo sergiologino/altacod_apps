@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate:images": "node scripts/generate-app-images.mjs",
+    "test": "vitest run",
+    "build": "npm run generate:images && npm test && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -21,6 +23,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   }
 }

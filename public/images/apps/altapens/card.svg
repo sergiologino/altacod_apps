@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#0b1220"/>
+  <rect width="1200" height="675" fill="url(#g)" opacity="0.35"/>
+  <circle cx="980" cy="120" r="180" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="200" cy="560" r="220" fill="#14b8a6" opacity="0.12"/>
+  <text x="80" y="120" font-family="system-ui,sans-serif" font-size="72">💚</text>
+  <text x="80" y="280" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="64" font-weight="700">AltaPens</text>
+  <text x="80" y="350" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="32">Забота о близких</text>
+  <rect x="80" y="400" width="320" height="8" rx="4" fill="#14b8a6"/>
+  <text x="80" y="480" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="28">Забота о близких · Altacod</text>
+  <text x="80" y="580" fill="#64748b" font-family="system-ui,sans-serif" font-size="22">altacod.ru</text>
+</svg>

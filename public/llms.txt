@@ -1,0 +1,24 @@
+# Altacod
+
+> Студия разработки цифровых продуктов с искусственным интеллом (Россия).
+
+Altacod создаёт веб- и мобильные приложения: родительский контроль, забота о пожилых, трейдинговая аналитика, волонтёрские платформы, POSSE-публикации, ИИ-инструменты и lifestyle-сервисы.
+
+## Продукты
+
+- AltaKid — родительский контроль — https://altakid.ru
+- AltaNote — умные заметки — https://altanote.pro
+- AltaPens — забота о пожилых — https://altapens.ru
+- AltaTrade — аналитика рынков — https://altatrade.tech
+- Publisher — автопостинг — https://myposts.pro
+- NeuroMaster — ИИ-обёртка — https://neuromaster.pro
+- Voensovet — помощь военным — https://voensovet.ru
+- Любимая Дача — садоводство — https://dacha-ai.ru
+- App Audit — аудит лендингов — https://app-audit.pro
+- School Trainer — школьный тренажёр — https://school-trainer.altakid.ru
+
+Полный каталог: /#products
+
+## Контакты
+
+Будут опубликованы на главной странице в разделе «Контакты».
