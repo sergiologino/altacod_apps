@@ -55,7 +55,7 @@ function svg({ title, subtitle, colors, icon, variant }) {
   <text x="80" y="350" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="32">${subtitle}</text>
   <rect x="80" y="400" width="320" height="8" rx="4" fill="${c1}"/>
   <text x="80" y="480" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="28">${label} · Altacod</text>
-  <text x="80" y="580" fill="#64748b" font-family="system-ui,sans-serif" font-size="22">altacod.ru</text>
+  <text x="80" y="580" fill="#64748b" font-family="system-ui,sans-serif" font-size="22">altacod.com</text>
 </svg>`;
 }
 

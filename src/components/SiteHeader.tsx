@@ -1,25 +1,25 @@
+"use client";
+
 import Link from "next/link";
-import { SITE_NAME } from "@/lib/site";
+import { BrandLogo } from "@/components/BrandLogo";
+import { usePreferences } from "@/components/providers/PreferencesProvider";
+import { HeaderToolbar } from "@/components/HeaderToolbar";
 
 export function SiteHeader() {
+  const { t } = usePreferences();
+
   return (
-    <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 text-sm font-bold text-white">
-            A
-          </span>
-          <span className="text-lg font-semibold tracking-tight text-slate-50 group-hover:text-cyan-300 transition-colors">
-            {SITE_NAME}
-          </span>
-        </Link>
-        <nav className="flex items-center gap-6 text-sm text-slate-400">
-          <Link href="/#products" className="hover:text-cyan-300 transition-colors">
-            Продукты
+    <header className="sticky top-0 z-50 border-b border-border bg-header/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <BrandLogo />
+        <nav className="flex items-center gap-4 sm:gap-6 text-sm text-muted">
+          <Link href="/#products" className="hidden sm:inline hover:text-accent transition-colors">
+            {t.navProducts}
           </Link>
-          <Link href="/#about" className="hover:text-cyan-300 transition-colors">
-            О студии
+          <Link href="/#about" className="hidden sm:inline hover:text-accent transition-colors">
+            {t.navAbout}
           </Link>
+          <HeaderToolbar />
         </nav>
       </div>
     </header>

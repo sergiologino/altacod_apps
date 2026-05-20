@@ -1,14 +1,50 @@
 @import "tailwindcss";
 
-:root {
+:root,
+html.dark {
   --background: #020617;
   --foreground: #f1f5f9;
+  --muted: #94a3b8;
+  --card: rgb(15 23 42 / 0.4);
+  --header: rgb(2 6 23 / 0.8);
+  --footer: #020617;
+  --border: rgb(30 41 59 / 0.8);
   --accent: #22d3ee;
+  --accent-hover: #67e8f9;
+  --hero-glow: rgb(14 116 144 / 0.2);
+  --image-bg: rgb(15 23 42 / 0.5);
+  --prose: #94a3b8;
+  --prose-heading: #f8fafc;
+}
+
+html.light {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --card: #ffffff;
+  --header: rgb(248 250 252 / 0.9);
+  --footer: #f1f5f9;
+  --border: #e2e8f0;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --hero-glow: rgb(8 145 178 / 0.12);
+  --image-bg: #f1f5f9;
+  --prose: #475569;
+  --prose-heading: #0f172a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-header: var(--header);
+  --color-footer: var(--footer);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-hero-glow: var(--hero-glow);
+  --color-image-bg: var(--image-bg);
   --font-sans: var(--font-manrope), system-ui, sans-serif;
 }
 
@@ -20,7 +56,7 @@ body {
 .prose-app p {
   margin-bottom: 1rem;
   line-height: 1.75;
-  color: #94a3b8;
+  color: var(--prose);
 }
 
 .prose-app h2 {
@@ -28,5 +64,5 @@ body {
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #f8fafc;
+  color: var(--prose-heading);
 }

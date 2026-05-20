@@ -1,13 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#06b6d4"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#020617"/>
+      <stop offset="1" stop-color="#0f172a"/>
     </linearGradient>
+    <linearGradient id="mark" x1="80" y1="200" x2="200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#06b6d4"/>
+      <stop stop-color="#6366f1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="20%" r="50%">
+      <stop stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="1200" height="630" fill="#0b1220"/>
-  <rect width="1200" height="630" fill="url(#g)" opacity="0.4"/>
-  <text x="80" y="280" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="72" font-weight="700">Altacod</text>
-  <text x="80" y="360" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="36">&8D@>2K5 ?@>4C:BK A </text>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="80" y="210" width="120" height="120" rx="28" fill="url(#mark)"/>
+  <rect x="98" y="232" width="34" height="28" rx="7" fill="#fff" fill-opacity="0.95"/>
+  <rect x="140" y="232" width="34" height="28" rx="7" fill="#fff" fill-opacity="0.82"/>
+  <rect x="114" y="276" width="52" height="32" rx="7" fill="#fff" fill-opacity="0.9"/>
+  <text x="230" y="285" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="72" font-weight="700">Altacod</text>
+  <text x="230" y="350" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="32">Прикладные IT-продукты · Web &amp; Mobile</text>
 </svg>

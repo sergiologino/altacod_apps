@@ -16,7 +16,7 @@ export function AppImage({
   sizes = "(max-width: 768px) 100vw, 50vw",
 }: AppImageProps) {
   return (
-    <div className={`relative overflow-hidden bg-slate-900/50 ${className}`}>
+    <div className={`relative overflow-hidden bg-image-bg ${className}`}>
       <Image
         src={src}
         alt={alt}
