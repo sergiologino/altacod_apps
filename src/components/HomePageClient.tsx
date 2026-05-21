@@ -1,11 +1,11 @@
 "use client";
 
-import { apps } from "@/data/apps";
+import type { AppProject } from "@/data/apps";
 import { AppCard } from "@/components/AppCard";
 import { usePreferences } from "@/components/providers/PreferencesProvider";
 import { SITE_NAME } from "@/lib/site";
 
-export function HomePageClient() {
+export function HomePageClient({ apps }: { apps: AppProject[] }) {
   const { t } = usePreferences();
   const intro = t.companyIntro as string[];
 

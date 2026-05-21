@@ -5,6 +5,9 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..", "public", "images", "apps");
 
+const RASTER_EXT = ["webp", "avif", "png", "jpg", "jpeg", "gif"];
+const SLOTS = ["card", "detail-1", "detail-2", "detail-3"];
+
 const apps = [
   { slug: "altakid", title: "AltaKid", subtitle: "Родительский контроль", colors: ["#0ea5e9", "#6366f1"], icon: "🛡️" },
   { slug: "altanote", title: "AltaNote", subtitle: "Умные заметки", colors: ["#8b5cf6", "#ec4899"], icon: "📝" },
@@ -27,6 +30,13 @@ const apps = [
   { slug: "school-trainer", title: "School Trainer", subtitle: "Школьный тренажёр", colors: ["#3b82f6", "#22d3ee"], icon: "📚" },
   { slug: "xintegra", title: "Xintegra", subtitle: "Интегратор X", colors: ["#0f172a", "#38bdf8"], icon: "𝕏" },
 ];
+
+function slotExists(dir, slot) {
+  for (const ext of [...RASTER_EXT, "svg"]) {
+    if (existsSync(join(dir, `${slot}.${ext}`))) return true;
+  }
+  return false;
+}
 
 function svg({ title, subtitle, colors, icon, variant }) {
   const [c1, c2] = colors;
@@ -59,13 +69,22 @@ function svg({ title, subtitle, colors, icon, variant }) {
 </svg>`;
 }
 
+let created = 0;
+let skipped = 0;
+
 for (const app of apps) {
   const dir = join(root, app.slug);
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "card.svg"), svg({ ...app, variant: "card" }));
-  writeFileSync(join(dir, "detail-1.svg"), svg({ ...app, variant: "detail-1" }));
-  writeFileSync(join(dir, "detail-2.svg"), svg({ ...app, variant: "detail-2" }));
-  writeFileSync(join(dir, "detail-3.svg"), svg({ ...app, variant: "detail-3" }));
+  for (const slot of SLOTS) {
+    if (slotExists(dir, slot)) {
+      skipped++;
+      continue;
+    }
+    writeFileSync(join(dir, `${slot}.svg`), svg({ ...app, variant: slot }));
+    created++;
+  }
 }
 
-console.log(`Generated images for ${apps.length} apps in ${root}`);
+console.log(
+  `App images: ${created} SVG placeholder(s) created, ${skipped} slot(s) skipped (user raster/svg present).`,
+);

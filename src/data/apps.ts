@@ -26,16 +26,9 @@ export interface AppProject {
   };
 }
 
-const img = (slug: string) => ({
-  card: `/images/apps/${slug}/card.svg`,
-  gallery: [
-    `/images/apps/${slug}/detail-1.svg`,
-    `/images/apps/${slug}/detail-2.svg`,
-    `/images/apps/${slug}/detail-3.svg`,
-  ] as [string, string, string],
-});
+export type AppContentBase = Omit<AppProject, "images">;
 
-export const apps: AppProject[] = [
+export const appsContent: AppContentBase[] = [
   {
     slug: "altakid",
     name: "AltaKid",
@@ -48,25 +41,26 @@ export const apps: AppProject[] = [
     fullDescription:
       "AltaKid — экосистема родительского контроля для Android. Родитель видит, где ребёнок, сколько времени проводит в телефоне и какие приложения использует. Планируется тесная интеграция со School Trainer — школьным тренажёром внутри той же семьи продуктов Altacod.",
     features: [
-      "Лимиты экрана и расписания",
-      "Геозоны и карта местоположения",
-      "Контроль установленных приложений",
+      "Лимиты доступности смартфона ребенку",
+      "Местоположение ребенка на карте с координатамидля навигатора",
+      "Блокировка отдельных приложений",
+      "Уроки и задания по русскому, матеше и инглишу",
       "Родительский веб-кабинет",
       "Публикация в RuStore",
+      "Веб-версия для родителей - владельцев iPhone"
     ],
     architecture:
       "React/Vite лендинг с SEO (Helmet, JSON-LD, sitemap); мобильное приложение — отдельный APK; ссылки на web.altakid.ru.",
     keywords: ["родительский контроль", "AltaKid", "безопасность детей", "геолокация ребёнка"],
     seoTitle: "AltaKid — родительский контроль | Altacod",
     seoDescription:
-      "AltaKid: лимиты экрана, геолокация и контроль приложений для Android. Продукт Altacod — altakid.ru.",
+      "AltaKid: лимиты экрана, геолокация и контроль приложений для Android и iPhone. Продукт Altacod — altakid.ru.",
     faq: [
       {
         question: "Где скачать приложение AltaKid?",
-        answer: "Приложение доступно в RuStore; на сайте altakid.ru — инструкции и ссылка на установку.",
+        answer: "Приложение доступно в RuStore; на сайте altakid.ru — инструкции и ссылка на установку. Также есть веб-версия если у родителя iPhone",
       },
     ],
-    images: img("altakid"),
   },
   {
     slug: "altanote",
@@ -96,7 +90,6 @@ export const apps: AppProject[] = [
         answer: "Проект временно снят с активной публикации; витрина отражает портфель Altacod.",
       },
     ],
-    images: img("altanote"),
   },
   {
     slug: "altapens",
@@ -126,7 +119,6 @@ export const apps: AppProject[] = [
         answer: "Для семей с пожилыми родственниками и профессиональных сиделок в России.",
       },
     ],
-    images: img("altapens"),
   },
   {
     slug: "altatrade",
@@ -156,7 +148,6 @@ export const apps: AppProject[] = [
         answer: "Нет. Платформа аналитическая; автоторговля вне текущего scope.",
       },
     ],
-    images: img("altatrade"),
   },
   {
     slug: "publisher",
@@ -186,7 +177,6 @@ export const apps: AppProject[] = [
         answer: "Telegram, VK, OK, MAX и расширяемый список через очередь публикаций.",
       },
     ],
-    images: img("publisher"),
   },
   {
     slug: "neuromaster",
@@ -210,7 +200,6 @@ export const apps: AppProject[] = [
         answer: "NeuroMaster — потребительская обёртка; Orchestra — мультиагентные задачи с approvals.",
       },
     ],
-    images: img("neuromaster"),
   },
   {
     slug: "voensovet",
@@ -234,7 +223,6 @@ export const apps: AppProject[] = [
         answer: "Военнослужащие, ветераны, члены семей и волонтёры — открытый информационный ресурс.",
       },
     ],
-    images: img("voensovet"),
   },
   {
     slug: "dacha-ai",
@@ -264,7 +252,6 @@ export const apps: AppProject[] = [
         answer: "Базовые функции рассчитаны на PWA; офлайн-пакеты в развитии.",
       },
     ],
-    images: img("dacha-ai"),
   },
   {
     slug: "neurofriend",
@@ -287,7 +274,6 @@ export const apps: AppProject[] = [
         answer: "Нет. Продукт позиционируется как supportive companion, не медицинский сервис.",
       },
     ],
-    images: img("neurofriend"),
   },
   {
     slug: "ipra",
@@ -311,7 +297,6 @@ export const apps: AppProject[] = [
         answer: "Статус MVP, публикация приостановлена до доработки.",
       },
     ],
-    images: img("ipra"),
   },
   {
     slug: "app-audit",
@@ -335,7 +320,6 @@ export const apps: AppProject[] = [
         answer: "SEO, визуал, paywall, доверие, CTA и ещё 4 категории — итоговый балл и рекомендации.",
       },
     ],
-    images: img("app-audit"),
   },
   {
     slug: "demand-pilot",
@@ -359,7 +343,6 @@ export const apps: AppProject[] = [
         answer: "MVP локально; публичный запуск на pilot.app-audit.pro планируется.",
       },
     ],
-    images: img("demand-pilot"),
   },
   {
     slug: "wibestyle",
@@ -383,7 +366,6 @@ export const apps: AppProject[] = [
         answer: "Целевой сценарий — ссылка на карточку товара; список интеграций расширяется.",
       },
     ],
-    images: img("wibestyle"),
   },
   {
     slug: "orchestra",
@@ -407,7 +389,6 @@ export const apps: AppProject[] = [
         answer: "После стабилизации багов; следите за orchestra.neuromaster.pro.",
       },
     ],
-    images: img("orchestra"),
   },
   {
     slug: "multitool",
@@ -431,7 +412,6 @@ export const apps: AppProject[] = [
         answer: "Более гибкий canvas и расширенный набор инструментов; пока pre-release.",
       },
     ],
-    images: img("multitool"),
   },
   {
     slug: "docbuddy",
@@ -455,7 +435,6 @@ export const apps: AppProject[] = [
         answer: "Фокус на самозанятых и ИП в РФ; детали в продуктовой документации.",
       },
     ],
-    images: img("docbuddy"),
   },
   {
     slug: "lovebaby",
@@ -478,7 +457,6 @@ export const apps: AppProject[] = [
         answer: "Нет. Информационные подсказки; при симптомах — обращайтесь к врачу.",
       },
     ],
-    images: img("lovebaby"),
   },
   {
     slug: "drinkbuddy",
@@ -501,7 +479,6 @@ export const apps: AppProject[] = [
         answer: "Пока тестовые сборки; домен не привязан.",
       },
     ],
-    images: img("drinkbuddy"),
   },
   {
     slug: "school-trainer",
@@ -525,7 +502,6 @@ export const apps: AppProject[] = [
         answer: "Старт с 5 класса; расширение классов в roadmap.",
       },
     ],
-    images: img("school-trainer"),
   },
   {
     slug: "xintegra",
@@ -549,13 +525,8 @@ export const apps: AppProject[] = [
         answer: "Сервис отключён; витрина описывает портфель и планы возврата.",
       },
     ],
-    images: img("xintegra"),
   },
 ];
-
-export function getAppBySlug(slug: string): AppProject | undefined {
-  return apps.find((a) => a.slug === slug);
-}
 
 export const statusLabels: Record<AppStatus, string> = {
   production: "В продакшене",

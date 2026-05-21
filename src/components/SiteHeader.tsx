@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { HeaderFindsLink } from "@/components/HeaderFindsLink";
 import { usePreferences } from "@/components/providers/PreferencesProvider";
 import { HeaderToolbar } from "@/components/HeaderToolbar";
 
@@ -10,13 +11,14 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-header/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
         <BrandLogo />
-        <nav className="flex items-center gap-4 sm:gap-6 text-sm text-muted">
-          <Link href="/#products" className="hidden sm:inline hover:text-accent transition-colors">
+        <HeaderFindsLink />
+        <nav className="flex items-center gap-3 sm:gap-5 text-sm text-muted">
+          <Link href="/#products" className="hidden lg:inline hover:text-accent transition-colors">
             {t.navProducts}
           </Link>
-          <Link href="/#about" className="hidden sm:inline hover:text-accent transition-colors">
+          <Link href="/#about" className="hidden lg:inline hover:text-accent transition-colors">
             {t.navAbout}
           </Link>
           <HeaderToolbar />

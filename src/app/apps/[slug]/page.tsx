@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { apps, getAppBySlug } from "@/data/apps";
+import { getAppBySlug, getAppSlugs } from "@/data/get-apps";
 import { AppDetailClient } from "@/components/AppDetailClient";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -12,7 +12,7 @@ import {
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return apps.map((app) => ({ slug: app.slug }));
+  return getAppSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props) {

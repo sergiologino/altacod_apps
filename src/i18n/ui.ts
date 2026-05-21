@@ -10,6 +10,9 @@ export const ui = {
     ],
     navProducts: "Продукты",
     navAbout: "О студии",
+    findsTitle: "Altacod Finds",
+    findsLead: "Коллекция IT, AI и dev — 4 года",
+    findsAria: "Открыть коллекцию полезных материалов на finds.altacod.com",
     productsTitle: "Наши приложения",
     productsLead:
       "Каждая карточка ведёт на страницу продукта с подробным описанием, галереей и SEO-разметкой.",
@@ -39,6 +42,9 @@ export const ui = {
     ],
     navProducts: "Products",
     navAbout: "About",
+    findsTitle: "Altacod Finds",
+    findsLead: "IT, AI & dev picks — 4 years",
+    findsAria: "Open the curated collection at finds.altacod.com",
     productsTitle: "Our applications",
     productsLead:
       "Each card opens a product page with full description, gallery, and structured SEO.",
