@@ -21,6 +21,14 @@ export function buildPageMetadata(opts: {
     description: opts.description,
     keywords,
     alternates: { canonical: url },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "32x32" },
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/brand/logo-mark.svg", type: "image/svg+xml" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    },
     openGraph: {
       type: opts.type ?? "website",
       locale: "ru_RU",

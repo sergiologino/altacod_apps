@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "generate:images": "node scripts/generate-app-images.mjs",
+    "generate:seo": "node scripts/generate-seo-static.mjs",
+    "generate:favicon": "node scripts/generate-favicon.mjs",
+    "generate": "npm run generate:images && npm run generate:seo && npm run generate:favicon",
     "test": "vitest run",
-    "build": "npm run generate:images && npm test && next build",
+    "build": "npm run generate && npm test && next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -25,6 +28,8 @@
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "sharp": "^0.34.5",
+    "png-to-ico": "^2.1.8"
   }
 }

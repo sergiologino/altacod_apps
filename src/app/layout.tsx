@@ -32,6 +32,9 @@ export default function RootLayout({
     <html lang="ru" className={`${manrope.variable} dark h-full`} suppressHydrationWarning>
       <head>
         <PreferencesInitScript />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans antialiased">
         <PreferencesProvider>
